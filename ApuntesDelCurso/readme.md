@@ -14,7 +14,7 @@ Antes de comenzar, lo primero sera instalar las siguientes extensiones en Visual
 
 `$ npm init -y`
 
-2. Instalar TailwindCSS siguiendo las recomendaciones de su [documentación oficial](https://tailwindcss.com/docs/installation/using-postcss). 
+2. Instalar TailwindCSS siguiendo las recomendaciones de su 
 Para este proyecto se utilizara el plugin de **Post CSS**, asi que en la consola del proyecto, escribir el comando:
 
 `$ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
@@ -68,3 +68,24 @@ Luego agregar algunas etiquetas con clases de Tailwind.
 
 9. El ultimo paso a realizar es levantar el proyecto utilizando Live Server.
 
+
+## Clase 6: Directivas de Tailwind
+
+Las directivas son instrucciones que utiliza Tailwind para insertar código en el archivo final de css. 
+Las directivas las podemos identificar fácilmente ya que llevan un @ antes del nombre, revisando la documentación de Tailwind nos encontramos con:
+
++ @tailwind base → Inicializa todos los elementos de nuestro HTML sin estilo.
++ @tailwind components → Nos permite acceder a todas las clases de tailwind.
++ @tailwind utilities → Agrega todas las utilidades al proyecto y nos permite acceder a ellas.
+
+Otras directivas son:
++ @layer → Nos sirve para decirle a Tailwind a qué “bloque de código” pertenece un conjunto de estilos personalizados. Las capas válidas son a base, components and utilities.
++ @apply → Se utiliza para incorporar cualquier clase de utilidad existente en su propio CSS personalizado. Esto es útil cuando se necesita escribir CSS personalizado (como anular los estilos en una biblioteca de terceros) pero aún desea trabajar con sus tokens de diseño y usar la misma sintaxis que está acostumbrado a usar en su HTML.
++ @config → Se utiliza para especificar qué archivo de configuración debe usar Tailwind al compilar ese archivo CSS. Esto es útil para proyectos que necesitan usar diferentes archivos de configuración para diferentes puntos de entrada de CSS.
+Podemos generar variantes receptivas de nuestras propias clases envolviendo sus definiciones en la directiva.
+
+Ademas de las directivas, Tailwind posee funciones propias:
++ theme() → Esta función se utiliza para acceder a los valores de configuración de Tailwind mediante la notación de puntos.
++ screen() → Esta función permite crear **media queries** que hacen referencia a los breakpoint por nombre en lugar de duplicar sus valores en su propio CSS.
+
+Para entender mejor este tema, se pueden ver los ejemplos de cada una de las directivas visitando la [documentación oficial](https://tailwindcss.com/docs/functions-and-directives).
