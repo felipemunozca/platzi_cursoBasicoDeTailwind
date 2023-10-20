@@ -2,7 +2,7 @@
 
 El proyecto del curso esta construido el TailwindCSS en su version 2. 
 Al avanzar con las clases, se comenzaron a producir errores debido a que los comandos que utilizaba la profesora tenían clases, métodos y dependencias deprecadas.
-Por este motivo, se utilizara la version 3 de TailwindCSS, apoyándose en los comentarios de los alumnos del curso junto a la documentación oficial.
+Por este motivo, se utilizara la version 3 de TailwindCSS, apoyándose en los comentarios de los alumnos del curso junto a la [documentación oficial](https://tailwindcss.com/docs/installation).
 
 
 ## Clase 5: Creación del proyecto e instalación de Tailwind
@@ -34,7 +34,7 @@ Para este proyecto se utilizara el plugin de **Post CSS**, asi que en la consola
 
 `$ npx tailwindcss init`
 
-5. Configurar la ruta de la plantilla por defecto. Dentro del archivo *tailwind.config.js*  se debe agregar la ruta del archivo index junto a un string de como cargar los archivos como aparece en la documentación oficial
+5. Configurar la ruta de la plantilla por defecto. Dentro del archivo *tailwind.config.js*  se debe agregar la ruta del archivo index junto a un string de como cargar los archivos como aparece en la [documentación oficial](https://tailwindcss.com/docs/installation/using-postcss).
 ```
 content: ["./public/index.html", "./src/**/*.{html,js}"],
 ```
@@ -89,3 +89,42 @@ Ademas de las directivas, Tailwind posee funciones propias:
 + screen() → Esta función permite crear **media queries** que hacen referencia a los breakpoint por nombre en lugar de duplicar sus valores en su propio CSS.
 
 Para entender mejor este tema, se pueden ver los ejemplos de cada una de las directivas visitando la [documentación oficial](https://tailwindcss.com/docs/functions-and-directives).
+
+
+## Clase 7: Nueva paleta de colores extendida
+
+Una de las características distintivas de Tailwind es que cuenta con su propio playground [Tailwind Play](https://play.tailwindcss.com/) para probar las clases y estilos CSS y verlos directamente reflejados en linea en tiempo real. 
+
+Tailwind incluye una paleta de colores predeterminada diseñada por expertos lista para usar que es un excelente punto de partida para darle diseños a tus proyectos.
+[Documentación oficial](https://tailwindcss.com/docs/customizing-colors)
+
+Por ejemplo, si se quiere crear un div y asignarle un color de fondo, se debe utilizar la clase **bg-(nombre color en ingles)-(numero entre 50 y 950)**. 
+No olvidar que se le debe agregar altura y anchura al div para que pueda verse el color.
+´´´html
+<div class="w-64 h-64 bg-blue-300">
+</div>
+´´´
+
+Otra ventaja de Tailwind en cuanto al tema de colores, es que se puede crear una paleta de colores personalizados. 
+Para esto, dentro del archivo *tailwind.config.js* se crea un objeto con el nombre del color, el nombre de la llave del objeto y el color en exa decimal. 
+```javascript
+theme: {
+    extend: {
+		colors: {
+			cafe: {
+				50: '#fdf8f6',
+				100: '#f2e8e5',
+				200: '#eaddd7',
+				300: '#e0cec7',
+				400: '#d2bab0',
+				500: '#bfa094',
+				600: '#a18072',
+				700: '#977669',
+				800: '#846358',
+				900: '#43302b',
+			},
+		}
+    },
+}
+```
+
