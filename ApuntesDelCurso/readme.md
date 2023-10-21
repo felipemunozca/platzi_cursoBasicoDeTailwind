@@ -100,31 +100,73 @@ Tailwind incluye una paleta de colores predeterminada diseñada por expertos lis
 
 Por ejemplo, si se quiere crear un div y asignarle un color de fondo, se debe utilizar la clase **bg-(nombre color en ingles)-(numero entre 50 y 950)**. 
 No olvidar que se le debe agregar altura y anchura al div para que pueda verse el color.
-´´´html
+````html
 <div class="w-64 h-64 bg-blue-300">
+	
 </div>
-´´´
+````
 
 Otra ventaja de Tailwind en cuanto al tema de colores, es que se puede crear una paleta de colores personalizados. 
 Para esto, dentro del archivo *tailwind.config.js* se crea un objeto con el nombre del color, el nombre de la llave del objeto y el color en exa decimal. 
 ```javascript
 theme: {
     extend: {
-		colors: {
-			cafe: {
-				50: '#fdf8f6',
-				100: '#f2e8e5',
-				200: '#eaddd7',
-				300: '#e0cec7',
-				400: '#d2bab0',
-				500: '#bfa094',
-				600: '#a18072',
-				700: '#977669',
-				800: '#846358',
-				900: '#43302b',
-			},
-		}
+      colors: {
+        brown: {
+          50: '#fdf8f6',
+          100: '#f2e8e5',
+          200: '#eaddd7',
+          300: '#e0cec7',
+          400: '#d2bab0',
+          500: '#bfa094',
+          600: '#a18072',
+          700: '#977669',
+          800: '#846358',
+          900: '#43302b',
+        },
+      }
     },
 }
 ```
 
+
+## Clase 8: Medidas y Breakpoints
+
+### Width
+Tailwind cuenta con sus propias utilidades para establecer el ancho de un elemento.
+
+Por ejemplo: Se pueden utilizar las clases con valores fijos para establecer el ancho de un div.
+>(NOTA: la clase w-64 equivale a 16rem o también 256px).
+````html
+<div class="w-64">
+	
+</div>
+````
+Existen otras formas de utilizar width, se recomienda visitar la [documentación oficial](https://tailwindcss.com/docs/width) y hacer pruebas con distintas clases. 
+
+### Height
+Al igual que con el width, Tailwind cuenta con sus propias utilidades para establecer el alto de un elemento.
+
+Por ejemplo: Se pueden utilizar las clases con valores fijos para establecer el alto de un article.
+>(NOTA: la clase w-64 equivale a 2.5rem o también 40px).
+````html
+<article class="w-10">
+	
+</article>
+````
+Existen otras formas de utilizar height, se recomienda visitar la [documentación oficial](https://tailwindcss.com/docs/height) y hacer pruebas con distintas clases. 
+
+### Breakpoint
+Un breakpoint es el salto en el que cambia la pantalla de Layout.
+
+Se puede manipular los estilos del archivo en función al tamaño de pantalla del dispositivo.
+
+Tailwind es un framework pensado en **diseño responsivo** por lo que se pueden crear interfaces de usuario adaptables.
+Los breakpoints que maneja Tailwind son:
+* sm  →  640px
+* md  →  768px
+* lg  →  1024px
+* xl  →  1280px
+* 2xl  →  1536px
+
+Para mayor información, consultar la [documentación oficial](https://tailwindcss.com/docs/responsive-design) .
