@@ -148,9 +148,9 @@ Existen otras formas de utilizar width, se recomienda visitar la [documentación
 Al igual que con el width, Tailwind cuenta con sus propias utilidades para establecer el alto de un elemento.
 
 Por ejemplo: Se pueden utilizar las clases con valores fijos para establecer el alto de un article.
->(NOTA: la clase w-64 equivale a 2.5rem o también 40px).
+>(NOTA: la clase h-10 equivale a 2.5rem o también 40px).
 ````html
-<article class="w-10">
+<article class="h-10">
 	
 </article>
 ````
@@ -169,4 +169,29 @@ Los breakpoints que maneja Tailwind son:
 * xl  →  1280px
 * 2xl  →  1536px
 
-Para mayor información, consultar la [documentación oficial](https://tailwindcss.com/docs/responsive-design) .
+Para mayor información, consultar la [documentación oficial](https://tailwindcss.com/docs/responsive-design).
+
+
+## Clase 9: Flexbox
+
+### Flexbox
+Flexbox es un modelo de layout que funciona principalmente respecto a un eje X y un eje Y.
+
+Controlando todo de manera unidimensional, esto se traduce al uso de una fila o columna.
+
+Dentro de Tailwind, al usar la palabra **flex** dentro de una clase, por defecto se ordenara en dirección de fila (row), para cambiar la dirección a columna se debe usar la clase **flex-col**.
+
+Ejemplo: Se crea un div que dentro contendrá 4 div pequeños como si fueran botones, se utiliza el layout de flex, luego se cambia la alineación de los elementos para que estén dentro de una columna, se crea un espacio de 4 en el eje y, se centran.
+````html
+<div class="w-96 h-96 bg-sky-200 flex flex-col space-y-4 justify-center items-center">
+  <div class="w-16 h-16 bg-gray-400"></div>
+  <div class="w-16 h-16 bg-gray-400"></div>
+  <div class="w-16 h-16 bg-gray-400"></div>
+  <div class="w-16 h-16 bg-gray-400"></div>
+</div>
+````
+
+Más información de Flex en la [documentación oficial](https://tailwindcss.com/docs/flex)
+
+### Grid
+Grid es un modelo de layout de que funciona como una cuadricula compuesta de filas y columnas, la cual nos permite dividir nuestra página en áreas o secciones.
