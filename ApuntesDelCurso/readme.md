@@ -195,3 +195,24 @@ Más información de Flex en la [documentación oficial](https://tailwindcss.com
 
 ### Grid
 Grid es un modelo de layout de que funciona como una cuadricula compuesta de filas y columnas, la cual nos permite dividir nuestra página en áreas o secciones.
+
+
+## Clase 11: Forms, Typography y Aspect ratio
+Tailwind CSS es un framework tan completo que además cuenta con plugins oficiales.
+
+### Forms
+Este plugin permite resetear los estilos predeterminados con los que cuentan los formularios, de esta manera es posible sobrescribir los estilos y trabajar con clases de utilidades dentro de Tailwind.
+
+Para conocer mas sobre este tema, consultar la [documentación oficial](https://github.com/tailwindlabs/tailwindcss-forms) y ademas, el siguiente enlace con [ejemplos en vivo](https://tailwindcss-forms.vercel.app/).
+
+### Typography
+Con este plugin puedes tener control sobre estilos vanilla con los que cuenta HTML, elementos como headings, paragraphs, listas, entre otros. El plugin de typography agrega una nueva clase llamada **"prose"** que permite dar un mejor formato a estos elementos.
+
+Para conocer mas sobre este tema, consultar la [documentación oficial](https://github.com/tailwindlabs/tailwindcss-typography)
+
+### Aspect ratio
+Hace referencia a la relación entre el ancho y el alto de la imagen o video. En muchas ocasiones cuando modificamos las dimensiones de elementos o imágenes podemos llegar a tener problemas con el aspect ratio.
+
+Este plugin llega a resolver el problema integrando la clase **"aspect"** que nos permite establecer un aspect ratio de manera fija para nuestros elementos.
+
+Para conocer mas sobre este tema, consultar la [documentación oficial](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
