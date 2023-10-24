@@ -216,3 +216,50 @@ Hace referencia a la relación entre el ancho y el alto de la imagen o video. En
 Este plugin llega a resolver el problema integrando la clase **"aspect"** que nos permite establecer un aspect ratio de manera fija para nuestros elementos.
 
 Para conocer mas sobre este tema, consultar la [documentación oficial](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
+
+
+## Clase 12: Tailwind como API para la creación de un Design System
+Un design system es el archivo donde se definen todos los estilos, tamaños, tipografías y colores que se usarán en el proyecto.
+
+Dentro del archivo *tailwind.config.css* en la sección theme:{}, dentro de extend:{}: se crea una nueva clase llamada backgroundImage:{} y dentro se crearan un nombre para cada llave junto a la ruta de cada imagen que necesitara el proyecto:
+```javascript
+theme: {
+	extend: {
+		backgroundImage: {
+			'sanFrancisco': "url('../img/sanFrancisco.jpg')",
+		}
+	},
+},
+```
+
+Luego de agregar todas las rutas de las imágenes, a continuación personalizando la paleta de colores.
+Dentro del mismo archivo, se crea una clase llamada backgroundColor:{} y se declara la propiedad **theme** para poder traer los colores nativos de Tailwind (traer los colores por defecto, por ejemplo primary, y si existe la clase, reemplazarlo con un nuevo color).
+Ademas, se declaran nuevas propiedades a las cuales se les asignaran los colores que aparecen en el archivo Figma [TravelPlatzi](https://www.figma.com/file/aPbr2Rhd5SCUjNYu6NRPPB/Platzi-Travel-Mockups?type=design&node-id=0-1&mode=design) que nos paso el equipo de diseño:
+```javascript
+backgroundColor: theme =>({
+	...theme('colors'),
+	'principal': '#CC2D4A',
+	'secondary': '#8FA206',
+	'tertiary': '#61AEC9',
+}),
+```
+
+Creo una nueva clase llamada textColor para personalizar los colores de los textos, utilizando el mismo patron de colores obtenidos de Figma definidos en el ejercicio anterior:
+```javascript
+textColor: {
+	'principal': '#CC2D4A',
+	'secondary': '#8FA206',
+	'tertiary': '#61AEC9',
+},
+```
+
+El ultimo detalle a personalizar, sera la tipografía, para esto se debe acceder a [Google Fonts](https://fonts.google.com/) y buscar **Montserrat**.
+Seleccionar la que dice Regular 400, copiar el enlace y pegarlo dentro del archivo *public/index.html* y luego crear una nueva clase llamada fontFamily dentro del archivo de configuración:
+```javascript
+fontFamily: {
+	Montserrat: ["Montserrat", "sans-serif"],
+},
+```
+
+Finalmente, para terminar con toda la configuración de los estilos personales, se debe realizar un build del código y posteriormente realizar pruebas llamando a las clases:
+`$ npm run dev`
