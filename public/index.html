@@ -10,9 +10,36 @@
     <title>Platzi Travel</title>
 </head>
 <body>
-    <p class="bg-primary">Hello, world</p>
-    <div class="w-64 h-64 bg-primary">
-        <h2 class="bg-secondary font-Montserrat text-xl">Prueba Fuente</h2>
+    <nav>
+
+    </nav>
+    <div id="tab_bar">
+
     </div>
+    <section class="w-full h-screen">
+        <!-- Clase 14: Se maqueta la sección del home como se muestra en el Figma. -->
+        <div id="home">
+            <!-- 14.1: Se define que el ancho ocupe el 100% de la pantalla, y el alto sera de un 75% de la pantalla. -->
+            <div class="w-full h-3/4">
+                <!-- 14.2: Para que el div se posicione sobre la imagen, se utiliza la clase absolute que seria igual a decir:
+                position: absolute -->
+                <div class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center">
+                    <input class="outline-none p-3 rounded-full shadow-sm" type="search" placeholder="San Francisco">
+                    <button class="w-46 text-xl text-primary bg-white rounded-full shadow-sm font-semibold p-4">
+                        Explorar
+                    </button>
+                </div>
+                <div class="w-full h-full">
+                    <img src="./img/sanFrancisco.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="recomendadas"></div>
+        <div id="rentas_destacadas"></div>
+        <div id="faq"></div>
+    </section>
+    <footer>
+
+    </footer>
 </body>
 </html>
