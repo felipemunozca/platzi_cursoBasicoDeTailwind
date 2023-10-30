@@ -262,4 +262,32 @@ fontFamily: {
 ```
 
 Finalmente, para terminar con toda la configuración de los estilos personales, se debe realizar un build del código y posteriormente realizar pruebas llamando a las clases:
-`$ npm run dev`
+`$ npm run tw:build`
+
+
+## Clase 16: Extracción de componentes a clases para nuestra card
+La extracción de componentes sirve para no escribir el mismo código en componentes que se utilizarán más de una vez (por ejemplo: cards) y poder mantener el principio de utility-first. La extracción de componentes trabaja de la mano con la directiva **@apply**.
+
+Para hacer la extracción de componentes se hace lo siguiente:
+
+En el archivo *src/css/tailwind.css* se crea una clase cuyo nombre será el adecuado para identificar cierto componente, dentro de la clase se introducirán todos los estilos de Tailwind que se estarán reutilizando haciendo el uso de la directiva **@apply** seguido de las clases de Tailwind.
+```javascript
+.Card {
+	@apply w-48 h-64 shadow-md rounded-lg
+}
+```
+
+A continuación se puede utilizar el nombre de la nueva clase en nuestro archivo HTML, 
+> IMPORTANTE: antes de probar la nueva clase ejecutar el script **tw:build** para que se efectúen los cambios.
+````html
+<div class="Card">
+
+</div>
+````
+
+Si comienzas a usar @apply para todo, básicamente solo estás escribiendo CSS nuevamente y desechando todas las ventajas del flujo de trabajo y mantenimiento que brinda Tailwind, por ejemplo:
+* Tienes que pensar en los nombres de las clases todo el tiempo → Nada te quitará la energía como pensar en el nombre de una clase para algo que no merece ser nombrado.
+* Tienes que saltar entre varios archivos para hacer cambios. Esto es un asesino del flujo de trabajo mucho más grande de lo que piensas antes de ubicar todo junto.
+* Cambiar estilos da más miedo. CSS es global, ¿está seguro de que puedes cambiar el valor de min-width en esa clase sin romper algo en otra parte del sitio?
+
+Si usas @apply, úsalo para cosas muy pequeñas y altamente reutilizables, como botones y formularios, e incluso, solo si no estás usando un framework como React, donde un componente sería una mejor opción.
