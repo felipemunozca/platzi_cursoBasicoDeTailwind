@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 .Card {
-    @apply w-48 h-64 shadow-md rounded-lg
+    /* 17.4: Para que las cards no cambien su tamaño, se agrega la clase flex-none */
+    @apply w-48 h-64 shadow-md rounded-lg flex-none
 }

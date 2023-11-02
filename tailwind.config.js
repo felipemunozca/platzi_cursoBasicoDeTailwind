@@ -18,6 +18,10 @@ module.exports = {
         'chicago': "url('../img/chicago.jpg')",
         'europe': "url('../img/europe.jpg')",
         'iceland': "url('../img/iceland.jpg')",
+        'santiago': "url('../img/santiago.jpg')",
+        'buenos_aires': "url('../img/buenos_aires.jpg')",
+        'machu_picchu': "url('../img/machu_picchu.jpg')",
+        'rio_de_janeiro': "url('../img/rio_de_janeiro.jpg')",
       },
       backgroundColor: theme => ({
 				...theme('colors'),

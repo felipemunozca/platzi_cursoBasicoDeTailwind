@@ -35,22 +35,101 @@
             </div>
         </div>
         <!-- Clase 15: Se crean las cards de la sección Recomendados. -->
-        <div class="p-20" id="recomendadas">
-            <!-- 15.1: Se puede asignar una, dos, tres o las cuatro esquinas de un elemento utilizando la clase rounded. -->
-            <!-- 16.1: Se reemplazan todas las clases por una extracción de componentes. -->
-            <div class="Card">
-                <!-- 15.2: Se agrega una imagen de fondo dentro de un div utilizando la clase bg- junto al nombre que se definió
-                en el archivo tailwind.config.js -->
-                <!-- 15.3: Se redondean las esquinas top del div. -->
-                <div class="w-full h-3/5 bg-norway bg-cover rounded-t-lg">
+        <div class="p-6" id="recomendadas">
+            <p class="text-3xl font-semibold text-primary">Recomendados</p>
+            <!-- 17.1: Se crea un nuevo div donde se colocaran las cards. -->
+            <!-- 17.3: Las cards se agregaran en columna, para mostrarlas de forma horizontal se debe utilizar flex -->
+            <div class="w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-6 ">
+                <!-- 15.1: Se puede asignar una, dos, tres o las cuatro esquinas de un elemento utilizando la clase rounded. -->
+                <!-- 16.1: Se reemplazan todas las clases por una extracción de componentes. -->
+                <div class="Card">
+                    <!-- 15.2: Se agrega una imagen de fondo dentro de un div utilizando la clase bg- junto al nombre que se definió
+                    en el archivo tailwind.config.js -->
+                    <!-- 15.3: Se redondean las esquinas top del div. -->
+                    <div class="w-full h-3/5 bg-norway bg-cover rounded-t-lg">
+                    </div>
+                    <!-- 15.4: Se redondean las esquinas bottom del div. -->
+                    <!-- 15.5: Se reemplaza la clase text-bold (deprecada) por font-semibold -->
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                        <p class="text-white text-xl font-semibold px-4 py-2">Noruega</p>
+                        <p class="text-white text-sm px-4">Paisajes increíbles</p>
+                    </div>
                 </div>
-                <!-- 15.4: Se redondean las esquinas bottom del div. -->
-                <!-- 15.5: Se reemplaza la clase text-bold (deprecada) por font-semibold -->
-                <div class="w-full h-2/5 bg-secondary rounded-b-lg">
-                    <p class="text-white text-xl font-semibold px-4 py-2">Noruega</p>
-                    <p class="text-white text-sm px-4">Paisajes increíbles</p>
+                <!-- 17.2: Se agregan nuevas cards, puede ser la misma o crear nuevas -->
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-new_york bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 rounded-b-lg">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2">New York</p>
+                        <p class="text-tertiary text-sm px-4">Gran ciudad, explora ahora!</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-yosemite bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                        <p class="text-white text-xl font-semibold px-4 py-2">Yosemite</p>
+                        <p class="text-white text-sm px-4">Un respiro del mundo</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-seattle bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 rounded-b-lg">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2">Seattle</p>
+                        <p class="text-tertiary text-sm px-4">Una ciudad para disfrutar al máximo</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-switzerland bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                        <p class="text-white text-xl font-semibold px-4 py-2">Suiza</p>
+                        <p class="text-white text-sm px-4">Turismo de montaña, relojes y chocolate</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-miami bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 rounded-b-lg">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2">Miami</p>
+                        <p class="text-tertiary text-sm px-4">Hermosos hoteles y playas</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-santiago bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                        <p class="text-white text-xl font-semibold px-4 py-2">Santiago de Chile</p>
+                        <p class="text-white text-sm px-4">La puerta de entrada a una gran diversidad</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-buenos_aires bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 rounded-b-lg">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2">Buenos Aires</p>
+                        <p class="text-tertiary text-sm px-4">La pasión por sus tradiciones</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-rio_de_janeiro bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                        <p class="text-white text-xl font-semibold px-4 py-2">Rio de Janeiro</p>
+                        <p class="text-white text-sm px-4">El carnaval mas alegre del mundo</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-machu_picchu bg-cover rounded-t-lg">
+                    </div>
+                    <div class="w-full h-2/5 rounded-b-lg">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2">Machu Picchu</p>
+                        <p class="text-tertiary text-sm px-4">Una ciudad llena de magia</p>
+                    </div>
                 </div>
             </div>
+
         </div>
         <div id="rentas_destacadas"></div>
         <div id="faq"></div>
