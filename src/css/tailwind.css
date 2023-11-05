@@ -8,3 +8,8 @@
     /* 18.7: Aumento el alto de card para que se vean todos los textos. Cambio de h-64 a h-68 */
     @apply w-48 h-72 shadow-md rounded-lg flex-none transform transition-all hover:-translate-y-4 hover:shadow-xl
 }
+
+/* 19.1: Se crea una clase para todos los títulos de las card de rentas. */
+.CardRentTitle{
+	@apply text-3xl px-8 pt-8 pb-1 font-semibold text-white 
+}
