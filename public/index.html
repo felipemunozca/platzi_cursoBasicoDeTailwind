@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&family=Montserrat&display=swap" rel="stylesheet">
     <title>Platzi Travel</title>
 </head>
-<body>
+<!-- 18.5: Para cambiar la fuente de todo el documento, se recomienda hacerlo desde la etiqueta <body> -->
+<body class="font-Montserrat">
     <nav>
 
     </nav>
@@ -24,8 +25,15 @@
                 <!-- 14.2: Para que el div se posicione sobre la imagen, se utiliza la clase absolute que seria igual a decir:
                 position: absolute -->
                 <div class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center">
-                    <input class="outline-none p-3 rounded-full shadow-sm" type="search" placeholder="San Francisco">
-                    <button class="w-46 text-xl text-primary bg-white rounded-full shadow-sm font-semibold p-4">
+                    <!-- 18.2: Si se produce un problema para generar la transición de la barra de búsqueda, lo único que se debe hacer es
+                    agregarle un ancho al input, en este caso es w-48 -->
+                    <input class="w-48 outline-none p-3 rounded-full shadow-sm
+                    transition-all duration-500 focus-within:shadow-sm focus:ring-2 focus:w-11/12" type="search" placeholder="San Francisco">
+                    <!-- 18.1: Tailwind cuenta con sus propias animaciones y transiciones para sus elementos.
+                    Para inicializar el uso de las transiciones, se comienza por utilizar la clase transition -->
+                    <button class="w-48 text-lg text-primary bg-white rounded-full shadow-sm font-semibold p-4 
+                    transition duration-500 ease-in-out hover:bg-primary hover:text-white 
+                    transform hover:-translate-y-1 hover:scale-110 transition-all-0">
                         Explorar
                     </button>
                 </div>
@@ -39,7 +47,9 @@
             <p class="text-3xl font-semibold text-primary">Recomendados</p>
             <!-- 17.1: Se crea un nuevo div donde se colocaran las cards. -->
             <!-- 17.3: Las cards se agregaran en columna, para mostrarlas de forma horizontal se debe utilizar flex -->
-            <div class="w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-6 ">
+            <!-- 18.6: Para corregir problemas con las card, lo primero es aumentar la altura del div contenedor a h-80.
+            Ademas, ocultar la barra de scroll en eje Y utilizando la clase overflow-y-hidden. -->
+            <div class="w-auto h-96 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-6 overflow-y-hidden">
                 <!-- 15.1: Se puede asignar una, dos, tres o las cuatro esquinas de un elemento utilizando la clase rounded. -->
                 <!-- 16.1: Se reemplazan todas las clases por una extracción de componentes. -->
                 <div class="Card">
@@ -93,7 +103,7 @@
                     </div>
                     <div class="w-full h-2/5 rounded-b-lg">
                         <p class="text-tertiary text-xl font-semibold px-4 py-2">Miami</p>
-                        <p class="text-tertiary text-sm px-4">Hermosos hoteles y playas</p>
+                        <p class="text-tertiary text-sm px-4">Exclusivos hoteles y hermosas playas</p>
                     </div>
                 </div>
                 <div class="Card">
@@ -125,13 +135,14 @@
                     </div>
                     <div class="w-full h-2/5 rounded-b-lg">
                         <p class="text-tertiary text-xl font-semibold px-4 py-2">Machu Picchu</p>
-                        <p class="text-tertiary text-sm px-4">Una ciudad llena de magia</p>
+                        <p class="text-tertiary text-sm px-4">Un destino lleno de magia</p>
                     </div>
                 </div>
             </div>
-
         </div>
-        <div id="rentas_destacadas"></div>
+        <div id="rentas_destacadas">
+            div
+        </div>
         <div id="faq"></div>
     </section>
     <footer>
