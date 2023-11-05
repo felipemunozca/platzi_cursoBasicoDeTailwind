@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="./css/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&family=Montserrat&display=swap" 
+    rel="stylesheet">
     <title>Platzi Travel</title>
 </head>
 <!-- 18.5: Para cambiar la fuente de todo el documento, se recomienda hacerlo desde la etiqueta <body> -->
@@ -17,7 +18,9 @@
     <div id="tab_bar">
 
     </div>
-    <section class="w-full h-screen">
+    <!-- 21.2: Para no tener que meter el <footer> dentro de la etiqueta de <section> (Mala Practica), solo hay que cambiar la clase
+    h-screen por h-auto -->
+    <section class="w-full h-auto">
         <!-- Clase 14: Se maqueta la sección del home como se muestra en el Figma. -->
         <div id="home">
             <!-- 14.1: Se define que el ancho ocupe el 100% de la pantalla, y el alto sera de un 75% de la pantalla. -->
@@ -170,8 +173,8 @@
                 <p class="text-3xl font-semibold text-primary mt-6">FAQS</p>
                 <div>
                     <p class="text-xl font-medium text-primary">Política de Cancelación</p>
-                    <p class="text-md pt-2">Para estancias menores a una semana es importante avisar con 3 días de anticipación, de caso 
-                        contrario será sancionado.</p>
+                    <p class="text-md pt-2">Para estancias menores a una semana es importante avisar con 3 días de anticipación, de 
+                        caso contrario será sancionado.</p>
                 </div>
                 <div>
                     <p class="text-xl font-medium text-primary">Métodos de pago</p>
@@ -187,15 +190,24 @@
                 </div>
                 <div>
                     <p class="text-xl font-medium text-primary">Estancias Largas</p>
-                    <p class="text-md pt-2">Contamos con estancias de hasta 3 meses, en este caso es requerido un anticipo con un monto del 
-                        50% del valor de la renta.</p>
+                    <p class="text-md pt-2">Contamos con estancias de hasta 3 meses, en este caso es requerido un anticipo con un 
+                        monto del 50% del valor de la renta.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-
+    <!-- 21.1: Se crea el footer y se le asigna una altura automática.
+    NOTA: Si se deja el código tal cual, el footer aparecerá pegado debajo de la sección de card por lo que se debe ajustar también las 
+    clases en la etiqueta <section>  -->
+    <footer class="w-full h-auto bg-gray-100 p-6 space-y-2">
+        <p class="text-lg">Acerca de</p>
+        <p class="text-sm text-gray-300">Inversionistas</p>
+        <p class="text-sm text-gray-300">Empleos</p>
+        <p class="text-sm text-gray-300">Política de Privacidad</p>
+        <p class="text-sm text-gray-300">Términos y Condiciones</p>
+        <p class="text-sm text-gray-300">Platzi Travel,Inc</p>
+        <p class="text-sm text-gray-300">Síguenos</p>
     </footer>
 </body>
 </html>
