@@ -15,9 +15,7 @@
     <nav>
 
     </nav>
-    <div id="tab_bar">
 
-    </div>
     <!-- 21.2: Para no tener que meter el <footer> dentro de la etiqueta de <section> (Mala Practica), solo hay que cambiar la clase
     h-screen por h-auto -->
     <section class="w-full h-auto">
@@ -200,14 +198,35 @@
     <!-- 21.1: Se crea el footer y se le asigna una altura automática.
     NOTA: Si se deja el código tal cual, el footer aparecerá pegado debajo de la sección de card por lo que se debe ajustar también las 
     clases en la etiqueta <section>  -->
-    <footer class="w-full h-auto bg-gray-100 p-6 space-y-2">
+    <footer class="w-full h-auto bg-gray-100 p-6 space-y-2 mb-12">
         <p class="text-lg">Acerca de</p>
         <p class="text-sm text-gray-300">Inversionistas</p>
-        <p class="text-sm text-gray-300">Empleos</p>
+        <p class="text-sm text-orange-400">Empleos</p>
         <p class="text-sm text-gray-300">Política de Privacidad</p>
         <p class="text-sm text-gray-300">Términos y Condiciones</p>
         <p class="text-sm text-gray-300">Platzi Travel,Inc</p>
         <p class="text-sm text-gray-300">Síguenos</p>
     </footer>
+
+    <!-- 22.1: Se mueve la tab bar desde el principio de la pagina, hasta el final. Un detalle es que con esto el código deja de ser
+    semántico, por lo que es UNA MALA PRACTICA. -->
+    <div class="w-full h-16 bg-white flex space-x-8 items-center justify-center fixed left-0 bottom-0 shadow-lg" id="tab_bar">
+        <a href="#home">
+            <img src="./svg/home.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+        </a>
+        <a href="#rentas_destacadas">
+            <img src="./svg/search.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+        </a>
+        <a href="#recomendadas">
+            <img src="./svg/heart.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+        </a>
+        <!-- 22.2: Para activar el dark mode en vez de una etiqueta <a> debe utilizarse un <button> -->
+        <button>
+            <img src="./svg/moon.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+        </button>
+        <a href="">
+            <img src="./svg/user.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+        </a>
+    </div>
 </body>
 </html>
