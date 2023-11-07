@@ -25,21 +25,35 @@
             <div class="w-full h-3/4">
                 <!-- 14.2: Para que el div se posicione sobre la imagen, se utiliza la clase absolute que seria igual a decir:
                 position: absolute -->
-                <div class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center">
-                    <!-- 18.2: Si se produce un problema para generar la transición de la barra de búsqueda, lo único que se debe hacer es
-                    agregarle un ancho al input, en este caso es w-48 -->
+                <!-- 23.5: Al cambiar el tamaño de la pantalla a escritorio, quitar el espacio en el eje Y, alinear los items a la
+                izquierda y agregar un padding superior. -->
+                <div class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center 
+                lg:space-y-0 lg:items-start lg:justify-start lg:pt-24">
+                    <!-- 18.2: Si se produce un problema para generar la transición de la barra de búsqueda, lo único que se debe hacer 
+                    es agregarle un ancho al input, en este caso es w-48 -->
+                    <!-- 23.3: Al cambiar el tamaño de la pantalla a escritorio, este input debe ocultarse. -->
                     <input class="w-48 outline-none p-3 rounded-full shadow-sm
-                    transition-all duration-500 focus-within:shadow-sm focus:ring-2 focus:w-11/12" type="search" placeholder="San Francisco">
+                    transition-all duration-500 focus-within:shadow-sm focus:ring-2 focus:w-11/12 
+                    lg:hidden" 
+                    type="search" placeholder="San Francisco">
+                    <!-- 23.6; Se agrega un div para mostrar un mensaje. Por defecto estará oculto, y solo se mostrara en pantallas
+                    superiores a dimensiones lg. -->
+                    <div class="hidden h-auto lg:w-2/5 lg:flex pb-6 ">
+                        <p class="lg:flex text-4xl ml-16 font-bold text-black">Encuentra más ubicaciones como esta</p>
+                    </div>
                     <!-- 18.1: Tailwind cuenta con sus propias animaciones y transiciones para sus elementos.
                     Para inicializar el uso de las transiciones, se comienza por utilizar la clase transition -->
                     <button class="w-48 text-lg text-primary bg-white rounded-full shadow-sm font-semibold p-4 
                     transition duration-500 ease-in-out hover:bg-primary hover:text-white 
-                    transform hover:-translate-y-1 hover:scale-110 transition-all-0">
+                    transform hover:-translate-y-1 hover:scale-110 transition-all-0
+                    lg:ml-16">
                         Explorar
                     </button>
                 </div>
-                <div class="w-full h-full">
-                    <img src="./img/sanFrancisco.jpg" alt="">
+                <!-- 23.4: En tamaño escritorio, se cambia la altura del div, la imagen del fondo y centrarla. -->
+                <div class="w-full h-full lg:h-96 lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center">
+                    <!-- 23.2: Al cambiar el tamaño de la pantalla a escritorio, esta imagen debe ocultarse. -->
+                    <img class="lg:hidden" src="./img/sanFrancisco.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -210,7 +224,9 @@
 
     <!-- 22.1: Se mueve la tab bar desde el principio de la pagina, hasta el final. Un detalle es que con esto el código deja de ser
     semántico, por lo que es UNA MALA PRACTICA. -->
-    <div class="w-full h-16 bg-white flex space-x-8 items-center justify-center fixed left-0 bottom-0 shadow-lg" id="tab_bar">
+    <!-- 23.1: Para volver responsiva la pagina, se debe agregar una medida especifica como lg, xl, md.
+    En este caso, en pantallas de escritorio, este tab bar no se debe ver, por lo que se utilizara la propiedad hidden en tamaño lg -->
+    <div class="w-full h-16 bg-white flex space-x-8 items-center justify-center fixed left-0 bottom-0 shadow-lg lg:hidden" id="tab_bar">
         <a href="#home">
             <img src="./svg/home.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
         </a>
