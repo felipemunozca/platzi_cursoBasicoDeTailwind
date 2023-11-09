@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- 26.1: Una de las ventajas mas notorias que tiene Tailwind CSS como framework es su optimización para crear
+dark mode de un proyecto. 
+El primer paso es ir al archivo tailwind.config.js y agregar la propiedad darkMode que sera igual a "class". -->
+<!-- 26.2: Para que toda la pagina trabaje con cambios de estilos en darkMode, se debe agregar la clase "dark". -->
+<html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +15,8 @@
     <title>Platzi Travel</title>
 </head>
 <!-- 18.5: Para cambiar la fuente de todo el documento, se recomienda hacerlo desde la etiqueta <body> -->
-<body class="font-Montserrat">
+<!-- 26.3: Para cambiar el color de todo el body en modo dark, utilizar la clase dark: junto al nuevo color. -->
+<body class="font-Montserrat dark:bg-gray-900">
     <!-- 25.1: Por defecto, la barra de navegación estará oculta y solo sera visible en pantallas superiores a lg. 
     Para hacer visible la barra de navegación, agrego la regla que en tamaño lg la barra sera de tipo flex lg:flex -->
     <!-- 25.3: Se agrega la clase justify-between para separar el contenido del titulo de la pagina con el menu de navegación. -->
@@ -19,24 +24,27 @@
     Un detalle que se puede notar, es que el Navbar pasa por debajo de las cards pequeñas de recomendados, para solucionarlo
     se puede utilizar la clase z-index para posicionar el Navbar lo mas alto posible como aparece en la documentación oficial: 
     https://tailwindcss.com/docs/z-index -->
-    <nav class="hidden w-full h-14 bg-white lg:flex justify-between p-4 fixed z-40">
+    <nav class="hidden w-full h-14 bg-white lg:flex justify-between p-4 fixed z-10 dark:bg-gray-800">
         <div class="h-auto w-auto">
-            <p class="text-lg text-primary font-black">Platzi Travel</p>
+            <p class="text-lg text-primary font-black dark:text-white">Platzi Travel</p>
         </div>
         <!-- 25.2: Se crea un menu de navegación, que sera de tipo flex, ordenado en una fila y cada elemento sera separado en el 
         eje X por 10. -->
         <div class="flex flex-row space-x-10">
-            <a href="#home" class="text-primary font-bold">Inicio</a>
-			<a href="#recomendados"class="text-primary font-bold">Recomendados</a>
-			<a href="#rentas_destacadas"class="text-primary font-bold">Rentas</a>
-			<a href="#faqs"class="text-primary font-bold">FAQS</a>
-			<a href="#sobre_nosotros"class="text-primary font-bold">Sobre nosotros</a>
+            <a href="#home" class="text-primary font-bold dark:text-white">Inicio</a>
+			<a href="#recomendados"class="text-primary font-bold dark:text-white">Recomendados</a>
+			<a href="#rentas_destacadas"class="text-primary font-bold dark:text-white">Rentas</a>
+			<a href="#faqs"class="text-primary font-bold dark:text-white">FAQS</a>
+			<a href="#sobre_nosotros"class="text-primary font-bold dark:text-white">Sobre nosotros</a>
         </div>
         <!-- 25.4: Se crea una sección para los iconos de la barra de navegación. -->
         <div class="flex space-x-4">
             <img src="./svg/search.svg" width="20" height="20" class="fill-current text-primary" alt="">
-            <img src="./svg/moon.svg" width="20" height="20" class="fill-current text-primary" alt="">
+            <button id="toggle">
+                <img src="./svg/moon.svg" width="20" height="20" class="fill-current text-primary" alt="">
+            </button>
             <img src="./svg/user.svg" width="20" height="20" class="fill-current text-gray-300" alt="">
+            <img src="./svg/user.svg" width="20" height="20" class="fill #fff" alt="">
         </div>
     </nav>
 
@@ -88,7 +96,7 @@
 
         <!-- Clase 15: Se crean las cards de la sección Recomendados. -->
         <div class="p-6" id="recomendados">
-            <p class="text-3xl font-semibold text-primary">Recomendados</p>
+            <p class="text-3xl font-semibold text-primary dark:text-white">Recomendados</p>
             <!-- 17.1: Se crea un nuevo div donde se colocaran las cards. -->
             <!-- 17.3: Las cards se agregaran en columna, para mostrarlas de forma horizontal se debe utilizar flex -->
             <!-- 18.6: Para corregir problemas con las card, lo primero es aumentar la altura del div contenedor a h-80.
@@ -104,7 +112,7 @@
                     </div>
                     <!-- 15.4: Se redondean las esquinas bottom del div. -->
                     <!-- 15.5: Se reemplaza la clase text-bold (deprecada) por font-semibold -->
-                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
                         <p class="text-white text-xl font-semibold px-4 py-2">Noruega</p>
                         <p class="text-white text-sm px-4">Paisajes increíbles</p>
                     </div>
@@ -113,15 +121,15 @@
                 <div class="Card">
                     <div class="w-full h-3/5 bg-new_york bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 rounded-b-lg">
-                        <p class="text-tertiary text-xl font-semibold px-4 py-2">New York</p>
-                        <p class="text-tertiary text-sm px-4">Gran ciudad, explora ahora!</p>
+                    <div class="w-full h-2/5 rounded-b-lg dark:bg-gray-800">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2 dark:text-white">New York</p>
+                        <p class="text-tertiary text-sm px-4 dark:text-white">Gran ciudad, explora ahora!</p>
                     </div>
                 </div>
                 <div class="Card">
                     <div class="w-full h-3/5 bg-yosemite bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
                         <p class="text-white text-xl font-semibold px-4 py-2">Yosemite</p>
                         <p class="text-white text-sm px-4">Un respiro del mundo</p>
                     </div>
@@ -129,15 +137,15 @@
                 <div class="Card">
                     <div class="w-full h-3/5 bg-seattle bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 rounded-b-lg">
-                        <p class="text-tertiary text-xl font-semibold px-4 py-2">Seattle</p>
-                        <p class="text-tertiary text-sm px-4">Una ciudad para disfrutar al máximo</p>
+                    <div class="w-full h-2/5 rounded-b-lg dark:bg-gray-800">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2 dark:text-white">Seattle</p>
+                        <p class="text-tertiary text-sm px-4 dark:text-white">Una ciudad para disfrutar al máximo</p>
                     </div>
                 </div>
                 <div class="Card">
                     <div class="w-full h-3/5 bg-switzerland bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
                         <p class="text-white text-xl font-semibold px-4 py-2">Suiza</p>
                         <p class="text-white text-sm px-4">Turismo de montaña, relojes y chocolate</p>
                     </div>
@@ -145,7 +153,7 @@
                 <div class="Card">
                     <div class="w-full h-3/5 bg-miami bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 rounded-b-lg">
+                    <div class="w-full h-2/5 rounded-b-lg dark:bg-gray-800">
                         <p class="text-tertiary text-xl font-semibold px-4 py-2">Miami</p>
                         <p class="text-tertiary text-sm px-4">Exclusivos hoteles y hermosas playas</p>
                     </div>
@@ -153,7 +161,7 @@
                 <div class="Card">
                     <div class="w-full h-3/5 bg-santiago bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
                         <p class="text-white text-xl font-semibold px-4 py-2">Santiago de Chile</p>
                         <p class="text-white text-sm px-4">La puerta de entrada a una gran diversidad</p>
                     </div>
@@ -161,15 +169,15 @@
                 <div class="Card">
                     <div class="w-full h-3/5 bg-buenos_aires bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 rounded-b-lg">
-                        <p class="text-tertiary text-xl font-semibold px-4 py-2">Buenos Aires</p>
-                        <p class="text-tertiary text-sm px-4">La pasión por sus tradiciones</p>
+                    <div class="w-full h-2/5 rounded-b-lg dark:bg-gray-800">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2 dark:text-white">Buenos Aires</p>
+                        <p class="text-tertiary text-sm px-4 dark:text-white">La pasión por sus tradiciones</p>
                     </div>
                 </div>
                 <div class="Card">
                     <div class="w-full h-3/5 bg-rio_de_janeiro bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 bg-secondary rounded-b-lg">
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
                         <p class="text-white text-xl font-semibold px-4 py-2">Rio de Janeiro</p>
                         <p class="text-white text-sm px-4">El carnaval mas alegre del mundo</p>
                     </div>
@@ -177,16 +185,16 @@
                 <div class="Card">
                     <div class="w-full h-3/5 bg-machu_picchu bg-cover rounded-t-lg">
                     </div>
-                    <div class="w-full h-2/5 rounded-b-lg">
-                        <p class="text-tertiary text-xl font-semibold px-4 py-2">Machu Picchu</p>
-                        <p class="text-tertiary text-sm px-4">Un destino lleno de magia</p>
+                    <div class="w-full h-2/5 rounded-b-lg dark:bg-gray-800">
+                        <p class="text-tertiary text-xl font-semibold px-4 py-2 dark:text-white">Machu Picchu</p>
+                        <p class="text-tertiary text-sm px-4 dark:text-white">Un destino lleno de magia</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="px-6 h-full" id="rentas_destacadas">
-            <p class="text-3xl font-semibold text-primary pb-6">Rentas Destacadas</p>
+            <p class="text-3xl font-semibold text-primary pb-6 dark:text-white">Rentas Destacadas</p>
             <!-- 19.2: Se crean diferentes div contenedores de las imágenes ya que algunos tendrán mas de dos imágenes por fila. -->
             <!-- space-y-6 -->
             <div class="w-full h-full flex flex-col  items-center justify-center">
@@ -223,27 +231,27 @@
 
         <div class="w-full h-full px-8 mt-10" id="faqs">
             <div class="w-full h-full px-6 flex flex-col space-y-4">
-                <p class="text-3xl font-semibold text-primary mt-6">FAQS</p>
+                <p class="text-3xl font-semibold text-primary mt-6 dark:text-white">FAQS</p>
                 <div>
-                    <p class="text-xl font-medium text-primary">Política de Cancelación</p>
-                    <p class="text-md pt-2">Para estancias menores a una semana es importante avisar con 3 días de anticipación, de 
+                    <p class="text-xl font-medium text-primary dark:text-white">Política de Cancelación</p>
+                    <p class="text-md pt-2 dark:text-white">Para estancias menores a una semana es importante avisar con 3 días de anticipación, de 
                         caso contrario será sancionado.</p>
                 </div>
                 <div>
-                    <p class="text-xl font-medium text-primary">Métodos de pago</p>
-                    <p class="text-md pt-2">Aceptamos distintos métodos de pago: VISA, MasterCard, American Express, Paypal y Binance.</p>
+                    <p class="text-xl font-medium text-primary dark:text-white">Métodos de pago</p>
+                    <p class="text-md pt-2 dark:text-white">Aceptamos distintos métodos de pago: VISA, MasterCard, American Express, Paypal y Binance.</p>
                 </div>
                 <div>
-                    <p class="text-xl font-medium text-primary">Mascotas</p>
-                    <p class="text-md pt-2">El tema de las mascotas dependerá directamente del anfitrión.</p>
+                    <p class="text-xl font-medium text-primary dark:text-white">Mascotas</p>
+                    <p class="text-md pt-2 dark:text-white">El tema de las mascotas dependerá directamente del anfitrión.</p>
                 </div>
                 <div>
-                    <p class="text-xl font-medium text-primary">Información de Seguridad</p>
-                    <p class="text-md pt-2">Todas nuestras estancias cuentan con seguro en caso de accidentes.</p>
+                    <p class="text-xl font-medium text-primary dark:text-white">Información de Seguridad</p>
+                    <p class="text-md pt-2 dark:text-white">Todas nuestras estancias cuentan con seguro en caso de accidentes.</p>
                 </div>
                 <div>
-                    <p class="text-xl font-medium text-primary">Estancias Largas</p>
-                    <p class="text-md pt-2">Contamos con estancias de hasta 3 meses, en este caso es requerido un anticipo con un 
+                    <p class="text-xl font-medium text-primary dark:text-white">Estancias Largas</p>
+                    <p class="text-md pt-2 dark:text-white">Contamos con estancias de hasta 3 meses, en este caso es requerido un anticipo con un 
                         monto del 50% del valor de la renta.</p>
                 </div>
             </div>
@@ -253,7 +261,7 @@
     <!-- 21.1: Se crea el footer y se le asigna una altura automática.
     NOTA: Si se deja el código tal cual, el footer aparecerá pegado debajo de la sección de card por lo que se debe ajustar también las 
     clases en la etiqueta <section>  -->
-    <footer class="w-full h-auto bg-gray-100 p-6 space-y-2 pb-20 lg:pb-6" id="sobre_nosotros">
+    <footer class="w-full h-auto bg-gray-100 p-6 mt-8 space-y-2 pb-20 lg:pb-6" id="sobre_nosotros">
         <p class="text-lg">Acerca de</p>
         <p class="text-sm text-gray-300">Inversionistas</p>
         <p class="text-sm text-orange-400">Empleos</p>
@@ -267,23 +275,42 @@
     semántico, por lo que es UNA MALA PRACTICA. -->
     <!-- 23.1: Para volver responsiva la pagina, se debe agregar una medida especifica como lg, xl, md.
     En este caso, en pantallas de escritorio, este tab bar no se debe ver, por lo que se utilizara la propiedad hidden en tamaño lg -->
-    <div class="w-full h-16 bg-white flex space-x-8 items-center justify-center fixed left-0 bottom-0 shadow-lg lg:hidden" id="tab_bar">
+    <div class="w-full h-16 bg-white flex space-x-8 items-center justify-center fixed left-0 bottom-0 shadow-lg lg:hidden dark:bg-gray-800" id="tab_bar">
         <a href="#home">
-            <img src="./svg/home.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+            <img src="./svg/home.svg" width="32" height="32" class="fill-current text-gray-300 dark:text-white" alt="">
         </a>
         <a href="#rentas_destacadas">
-            <img src="./svg/search.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+            <img src="./svg/search.svg" width="32" height="32" class="fill-current text-gray-300 dark:text-white" alt="">
         </a>
         <a href="#recomendadas">
-            <img src="./svg/heart.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+            <img src="./svg/heart.svg" width="32" height="32" class="fill-current text-gray-300 dark:text-white" alt="">
         </a>
         <!-- 22.2: Para activar el dark mode en vez de una etiqueta <a> debe utilizarse un <button> -->
-        <button>
+        <button id="toggle-sm">
             <img src="./svg/moon.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
         </button>
         <a href="">
-            <img src="./svg/user.svg" width="32" height="32" class="fill-current text-gray-300" alt="">
+            <img src="./svg/user.svg" width="32" height="32" class="fill-current text-gray-300 dark:text-white" alt="">
         </a>
     </div>
+
+    <!-- 26.4: Para hacer el dark mode dinámico y que se cambien los colores al presionar el icono de luna, se debe agregar un 
+    código JS. -->
+    <script>
+        /* 26.5: Se crean constantes con los elementos html a utilizar. */
+		const htmlElement = document.querySelector("html");
+		const toggleButton = document.querySelector("#toggle");
+		const toggleButtonSm = document.querySelector("#toggle-sm");
+
+        /* 26.6: Se crean los eventos click de cada botón. */
+		toggleButton.addEventListener("click", () => toggleDarkMode())
+		toggleButtonSm.addEventListener("click", () => toggleDarkMode())
+
+        /* 26.7: Se crea una función flecha con un if ternario.
+        SI el elemento html contiene la clase "dark", se remueve la clase , en caso contrario se agrega la clase. */
+		const toggleDarkMode = () => {
+			htmlElement.classList.contains("dark") ? htmlElement.classList.remove("dark") : htmlElement.classList.add("dark");
+		}
+	</script>
 </body>
 </html>
