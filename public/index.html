@@ -12,15 +12,40 @@
 </head>
 <!-- 18.5: Para cambiar la fuente de todo el documento, se recomienda hacerlo desde la etiqueta <body> -->
 <body class="font-Montserrat">
-    <nav>
-        
+    <!-- 25.1: Por defecto, la barra de navegación estará oculta y solo sera visible en pantallas superiores a lg. 
+    Para hacer visible la barra de navegación, agrego la regla que en tamaño lg la barra sera de tipo flex lg:flex -->
+    <!-- 25.3: Se agrega la clase justify-between para separar el contenido del titulo de la pagina con el menu de navegación. -->
+    <!-- 25.5: Se agrega la clase fixed para dejar la barra de navegación este fija cuando se navegue en la pagina.
+    Un detalle que se puede notar, es que el Navbar pasa por debajo de las cards pequeñas de recomendados, para solucionarlo
+    se puede utilizar la clase z-index para posicionar el Navbar lo mas alto posible como aparece en la documentación oficial: 
+    https://tailwindcss.com/docs/z-index -->
+    <nav class="hidden w-full h-14 bg-white lg:flex justify-between p-4 fixed z-40">
+        <div class="h-auto w-auto">
+            <p class="text-lg text-primary font-black">Platzi Travel</p>
+        </div>
+        <!-- 25.2: Se crea un menu de navegación, que sera de tipo flex, ordenado en una fila y cada elemento sera separado en el 
+        eje X por 10. -->
+        <div class="flex flex-row space-x-10">
+            <a href="#home" class="text-primary font-bold">Inicio</a>
+			<a href="#recomendados"class="text-primary font-bold">Recomendados</a>
+			<a href="#rentas_destacadas"class="text-primary font-bold">Rentas</a>
+			<a href="#faqs"class="text-primary font-bold">FAQS</a>
+			<a href="#sobre_nosotros"class="text-primary font-bold">Sobre nosotros</a>
+        </div>
+        <!-- 25.4: Se crea una sección para los iconos de la barra de navegación. -->
+        <div class="flex space-x-4">
+            <img src="./svg/search.svg" width="20" height="20" class="fill-current text-primary" alt="">
+            <img src="./svg/moon.svg" width="20" height="20" class="fill-current text-primary" alt="">
+            <img src="./svg/user.svg" width="20" height="20" class="fill-current text-gray-300" alt="">
+        </div>
     </nav>
 
     <!-- 21.2: Para no tener que meter el <footer> dentro de la etiqueta de <section> (Mala Practica), solo hay que cambiar la clase
     h-screen por h-auto -->
     <section class="w-full h-auto">
         <!-- Clase 14: Se maqueta la sección del home como se muestra en el Figma. -->
-        <div id="home">
+        <!-- 25.6: Se cambia el tamaño del div al padre para hacer la imagen principal mas grande. -->
+        <div class="" id="home">
             <!-- 14.1: Se define que el ancho ocupe el 100% de la pantalla, y el alto sera de un 75% de la pantalla. -->
             <div class="w-full h-3/4">
                 <!-- 14.2: Para que el div se posicione sobre la imagen, se utiliza la clase absolute que seria igual a decir:
@@ -28,7 +53,7 @@
                 <!-- 23.5: Al cambiar el tamaño de la pantalla a escritorio, quitar el espacio en el eje Y, alinear los items a la
                 izquierda y agregar un padding superior. -->
                 <div class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center 
-                lg:space-y-0 lg:items-start lg:justify-start lg:pt-24">
+                lg:space-y-0 lg:items-start lg:justify-start lg:pt-64">
                     <!-- 18.2: Si se produce un problema para generar la transición de la barra de búsqueda, lo único que se debe hacer 
                     es agregarle un ancho al input, en este caso es w-48 -->
                     <!-- 23.3: Al cambiar el tamaño de la pantalla a escritorio, este input debe ocultarse. -->
@@ -51,14 +76,18 @@
                     </button>
                 </div>
                 <!-- 23.4: En tamaño escritorio, se cambia la altura del div, la imagen del fondo y centrarla. -->
-                <div class="w-full h-full lg:h-96 lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center">
+                <!-- 25.7: Se aumenta el tamaño de la imagen de fondo de h-96 a h3/4.
+                Al hacerlo de esta manera, la imagen no genera una altura asi que no se ve el div, por lo que una mejor forma de 
+                hacerlo es utilizando unidades de medida rem, por ejemplo: a h-[38rem] -->
+                <div class="w-full h-full lg:h-[38rem] lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center">
                     <!-- 23.2: Al cambiar el tamaño de la pantalla a escritorio, esta imagen debe ocultarse. -->
                     <img class="lg:hidden" src="./img/sanFrancisco.jpg" alt="">
                 </div>
             </div>
         </div>
+
         <!-- Clase 15: Se crean las cards de la sección Recomendados. -->
-        <div class="p-6" id="recomendadas">
+        <div class="p-6" id="recomendados">
             <p class="text-3xl font-semibold text-primary">Recomendados</p>
             <!-- 17.1: Se crea un nuevo div donde se colocaran las cards. -->
             <!-- 17.3: Las cards se agregaran en columna, para mostrarlas de forma horizontal se debe utilizar flex -->
@@ -192,7 +221,7 @@
             </div>
         </div>
 
-        <div class="w-full h-full px-8 mt-10" id="faq">
+        <div class="w-full h-full px-8 mt-10" id="faqs">
             <div class="w-full h-full px-6 flex flex-col space-y-4">
                 <p class="text-3xl font-semibold text-primary mt-6">FAQS</p>
                 <div>
@@ -224,7 +253,7 @@
     <!-- 21.1: Se crea el footer y se le asigna una altura automática.
     NOTA: Si se deja el código tal cual, el footer aparecerá pegado debajo de la sección de card por lo que se debe ajustar también las 
     clases en la etiqueta <section>  -->
-    <footer class="w-full h-auto bg-gray-100 p-6 space-y-2 mb-12">
+    <footer class="w-full h-auto bg-gray-100 p-6 space-y-2 pb-20 lg:pb-6" id="sobre_nosotros">
         <p class="text-lg">Acerca de</p>
         <p class="text-sm text-gray-300">Inversionistas</p>
         <p class="text-sm text-orange-400">Empleos</p>
