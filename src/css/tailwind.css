@@ -6,10 +6,15 @@
     /* 17.4: Para que las cards no cambien su tamaño, se agrega la clase flex-none */
     /* 18.3: Se agregan las clases para poder animar la card. */
     /* 18.7: Aumento el alto de card para que se vean todos los textos. Cambio de h-64 a h-68 */
-    @apply w-48 h-72 shadow-md rounded-lg flex-none transform transition-all hover:-translate-y-4 hover:shadow-xl
+    @apply w-48 h-72 shadow-md rounded-lg flex-none border-solid border border-slate-300 transform transition-all hover:-translate-y-4 hover:shadow-xl
 }
 
 /* 19.1: Se crea una clase para todos los títulos de las card de rentas. */
-.CardRentTitle{
+.CardRentTitle {
 	@apply text-3xl px-8 pt-8 pb-1 font-semibold text-white 
+}
+
+.sectionTitle {
+    /* @apply text-3xl font-semibold text-primary dark:text-white */
+    @apply text-3xl font-semibold text-red-500 dark:text-white
 }
